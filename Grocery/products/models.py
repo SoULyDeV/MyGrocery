@@ -8,6 +8,7 @@ from io import BytesIO
 class Category(models.Model):
     name = models.CharField(max_length=150)
     slug = models.SlugField()
+    image = models.ImageField(upload_to='category_images/', blank=True, null=True)
     
     class Meta:
         verbose_name_plural = 'Categories'
