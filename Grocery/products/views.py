@@ -8,4 +8,9 @@ def home(request):
 
 def category_detail(request, slug):
     category = get_object_or_404(Category, slug=slug)
-    return render(request, 'category_detail.html', {'category': category})
+    products = category.products.all()
+    context = {
+        'category': category,
+        'products': products
+    }
+    return render(request, 'category_detail.html', context)
