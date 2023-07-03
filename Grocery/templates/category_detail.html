@@ -1,16 +1,24 @@
-<h2>{{ category.name }}</h2>
+{% extends 'base.html' %}
 
-{% for product in products %}
-    <div>
-        <h3>{{ product.name }}</h3>
-        {% if product.image %}
-            <img src="{{ product.thumbnail.url }}" alt="{{ product.name }} Image">
-        {% endif %}
-        <p>Price: {{ product.price }} dhs</p>
-        <p>Description: {{ product.description }}</p>
-    </div>
+{% block content %}
+    <h1 class="mb-5 text-2xl font-bold">{{ category.name }}</h1>
 
-{% empty %}
-    <p>No products available for this category.</p>
-{% endfor %}
+    {% for product in products %}
+        <div class="flex mb-4 bg-gray-200 rounded-xl">
+            <div class="w-1/4">
+                {% if product.image %}
+                    <img src="{{ product.thumbnail.url }}" alt="{{ product.name }} Image" class="max-w-full h-auto rounded-xl">
+                {% endif %}
+            </div>
+            <div class="w-3/4 ml-4">
+                <h3>{{ product.name }}</h3>
+                <p>Price: {{ product.price }} dhs</p>
+                <p>Description: {{ product.description }}</p>
+            </div>
+        </div>
+    {% empty %}
+        <p>No products available for this category.</p>
+    {% endfor %}
+{% endblock %}
+
 
