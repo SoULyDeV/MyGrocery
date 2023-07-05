@@ -3,6 +3,7 @@ from django.contrib import admin
 from django.conf.urls.static import static
 from django.urls import path, include
 from products import views
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('', views.home, name='home'),
