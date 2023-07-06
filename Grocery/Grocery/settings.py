@@ -21,8 +21,7 @@ SESSION_COOKIE_AGE = 86400
 CART_SESSION_ID = 'cart'
 
 
-# Application definition
-TAILWIND_APP_NAME = 'theme'
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -56,6 +55,7 @@ TEMPLATES = [
         'DIRS': [
             BASE_DIR / 'templates',
             BASE_DIR / 'users' / 'templates'/ 'users',
+            BASE_DIR / 'cart' / 'templates' / 'cart',
             ],
         'APP_DIRS': True,
         'OPTIONS': {
