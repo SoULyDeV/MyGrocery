@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Success{% endblock %}
+<!--this is the shop page-->
+
+{% block content %}
+
+    <div class="max-w-6xl mx-auto flex flex-wrap items-start py-6 px-6 xl:px-0">
+        
+        <form method="post" action="{% url 'start_order' %}">
+        
+            <div class="products w-full lg:w-3/4 pr-6">
+                <h1 class="mb-5 text-3xl" >Success</h1>
+
+                <p>Thanks for your purchase!</p>
+                
+            </div>
+    </div
+{% endblock %}
